@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pipeline-example/data-access/clicker-api": [
+        "libs/data-access/clicker-api/src/index.ts"
+      ],
+      "@pipeline-example/features/clicker-ui": [
+        "libs/features/clicker-ui/src/index.ts"
+      ],
+      "@pipeline-example/util/clicker-entities": [
+        "libs/util/clicker-entities/src/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

@@ -1,0 +1,17 @@
+#clickboard {
+    aspect-ratio: 2;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    cursor: pointer;
+
+    .mat-display-1 {
+        pointer-events: none;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+    }
+}

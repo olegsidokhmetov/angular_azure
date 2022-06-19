@@ -1,0 +1,48 @@
+{
+  "projectType": "library",
+  "root": "libs/features/clicker-ui",
+  "sourceRoot": "libs/features/clicker-ui/src",
+  "prefix": "pipeline-example",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": [
+        "dist/libs/features/clicker-ui"
+      ],
+      "options": {
+        "project": "libs/features/clicker-ui/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/features/clicker-ui/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/features/clicker-ui/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/features/clicker-ui"
+      ],
+      "options": {
+        "jestConfig": "libs/features/clicker-ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/features/clicker-ui/src/**/*.ts",
+          "libs/features/clicker-ui/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "feature"
+  ]
+}

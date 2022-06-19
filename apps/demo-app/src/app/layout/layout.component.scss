@@ -1,0 +1,37 @@
+@use '@angular/material' as mat;
+
+:root{
+    --app-nav-link-active: #ff8f00;
+}
+
+.dark-mode{
+--app-nav-link-active: #ff6000;
+}
+
+.flex-spacer{
+    flex: 1 1 auto;
+}
+
+mat-slide-toggle > label .mat-icon{
+    vertical-align: middle;
+}
+
+
+#maincontent{
+    font-weight: 400;
+    padding: 2rem 3.5rem;
+}
+
+
+#sidenav{
+    width: 14rem;
+    padding-top: 4rem;
+}
+
+#sidenav .mat-list-item-content{
+    padding: 0 1.5rem;
+}
+#sidenav .active  .mat-list-item-content{
+    background: var(--app-nav-link-active);
+    color: black;
+}

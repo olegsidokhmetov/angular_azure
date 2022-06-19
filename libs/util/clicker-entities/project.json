@@ -1,0 +1,42 @@
+{
+  "root": "libs/util/clicker-entities",
+  "sourceRoot": "libs/util/clicker-entities/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/util/clicker-entities",
+        "main": "libs/util/clicker-entities/src/index.ts",
+        "tsConfig": "libs/util/clicker-entities/tsconfig.lib.json",
+        "assets": [
+          "libs/util/clicker-entities/*.md"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/util/clicker-entities/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/util/clicker-entities"
+      ],
+      "options": {
+        "jestConfig": "libs/util/clicker-entities/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

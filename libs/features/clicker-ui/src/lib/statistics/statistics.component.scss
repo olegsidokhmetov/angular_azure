@@ -1,0 +1,68 @@
+#click_statistics_table_wrapper{
+    border-radius: .5rem;
+    overflow: hidden;
+
+
+    .empty-state{
+        padding: 3rem 5rem;
+        text-align: center;
+    }
+}
+
+#click_statistics_toolbar{
+    justify-content: end;
+    > * {
+        margin-left: 1rem;
+    }
+    > span{
+        margin-left: 0;
+        flex: 1 1 auto;
+        text-align: left;
+    }
+}
+#click_statistics_table {
+    width: 100%;
+
+    td,
+    th {
+        &:not(:first-child, :last-child) {
+            padding: 0 1rem;
+        }
+        &:first-child{
+            padding-right: 1rem;
+        }
+        &:last-child{
+            padding-left: 1rem;
+        }
+    }
+
+    .index-cell {
+        text-align: center;
+        min-width: 4rem;
+        border-right: 1px solid currentColor;
+        .mat-sort-header-container{
+            justify-content: end;
+        }
+    }
+
+    .position-cell {
+        text-align: center;
+        min-width: 5rem;
+        .mat-sort-header-container{
+            justify-content: center;
+        }
+    }
+
+    .agent-cell {
+        text-align: left;
+        width: auto;
+    }
+
+    .date-cell {
+        text-align: right;
+        min-width: 10rem;
+        .mat-sort-header-container{
+            justify-content: end;
+        }
+    }
+}

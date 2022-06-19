@@ -1,0 +1,49 @@
+<div id="click_statistics_table_wrapper" class="mat-elevation-z8" *ngIf="data$ | async as data">
+    <mat-toolbar id="click_statistics_toolbar" color="primary">
+        <span>Clicks logged</span>
+        <button (click)="refreshData();" mat-raised-button color="accent">Refresh</button>
+        <button (click)="clearData();" mat-raised-button color="warn">Clear</button>
+    </mat-toolbar>
+
+    <div class="empty-state" *ngIf="data?.length === 0; else clickerTable">
+        <h2>Nothing to see here</h2>
+        <p>So far no clicks have been recorded.<br />Try to refresh the data.</p>
+    </div>
+
+    <ng-template #clickerTable>
+        <table id="click_statistics_table" mat-table matSort [dataSource]="dataSource">
+
+            <ng-container matColumnDef="index">
+                <th class="index-cell" mat-header-cell mat-sort-header *matHeaderCellDef>Number</th>
+                <td class="index-cell" mat-cell *matCellDef="let element">{{ element.index }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="x">
+                <th class="position-cell" mat-header-cell mat-sort-header *matHeaderCellDef>X-Position</th>
+                <td class="position-cell" mat-cell *matCellDef="let element">{{ element.x }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="y">
+                <th class="position-cell" mat-header-cell mat-sort-header *matHeaderCellDef>Y-Position</th>
+                <td class="position-cell" mat-cell *matCellDef="let element">{{ element.y }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+                <th class="date-cell" mat-header-cell mat-sort-header *matHeaderCellDef>Date-Time</th>
+                <td class="date-cell" mat-cell *matCellDef="let element">{{ element.date | date:'dd MMM. yyyy H:mm'}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="agent">
+                <th class="agent-cell" mat-header-cell *matHeaderCellDef>User-Agent</th>
+                <td class="agent-cell" mat-cell *matCellDef="let element">{{ element.agent }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="['index','agent','x','y','date']"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['index','agent','x','y','date'];"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+            aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </ng-template>
+</div>

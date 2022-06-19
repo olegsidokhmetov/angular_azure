@@ -1,0 +1,51 @@
+{
+  "projectType": "library",
+  "root": "libs/data-access/clicker-api",
+  "sourceRoot": "libs/data-access/clicker-api/src",
+  "prefix": "pipeline-example",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": [
+        "dist/libs/data-access/clicker-api"
+      ],
+      "options": {
+        "project": "libs/data-access/clicker-api/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/data-access/clicker-api/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/data-access/clicker-api/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/data-access/clicker-api"
+      ],
+      "options": {
+        "jestConfig": "libs/data-access/clicker-api/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/data-access/clicker-api/src/**/*.ts",
+          "libs/data-access/clicker-api/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "data-access"
+  ],
+  "implicitDependencies": [
+    "api"
+  ]
+}

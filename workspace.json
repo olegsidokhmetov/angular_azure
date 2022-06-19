@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "data-access-clicker-api": "libs/data-access/clicker-api",
+    "demo-app": "apps/demo-app",
+    "features-clicker-ui": "libs/features/clicker-ui",
+    "util-clicker-entities": "libs/util/clicker-entities"
+  }
+}
